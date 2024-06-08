@@ -2,6 +2,7 @@ const menuBtn = document.querySelector('.navbar-hamburger-btn')
 const menuList = document.querySelector('.menu-list')
 const timesBtn = document.querySelector('.fa-xmark')
 const hamburgerInner = document.querySelector('.hamburger-inner')
+const menuElements = document.querySelectorAll('.menu-element')
 
 const showMenu = () => {
     menuList.classList.toggle('menu-animation')
@@ -12,5 +13,10 @@ const showMenu = () => {
         hamburgerInner.style.display = 'block';
     }
 }
+menuElements.forEach((element) => {
+    element.addEventListener('click', showMenu)
+})
+
 
 menuBtn.addEventListener('click', showMenu)
+

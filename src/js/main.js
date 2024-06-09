@@ -5,14 +5,21 @@ const hamburgerInner = document.querySelector('.hamburger-inner')
 const menuElements = document.querySelectorAll('.menu-element')
 
 const showMenu = () => {
-    menuList.classList.toggle('menu-animation')
-    timesBtn.classList.toggle('hamburger-animation')
-    if(timesBtn.classList.contains('hamburger-animation')){
-        hamburgerInner.style.display = 'none';
+    if (timesBtn.classList.contains('active-xmark')){
+        timesBtn.classList.remove('active-xmark')
+        hamburgerInner.style.display = 'block'
+        menuList.classList.remove('menu-animation')
+        
+
     }else{
-        hamburgerInner.style.display = 'block';
+        timesBtn.classList.add('active-xmark')
+        hamburgerInner.style.display = 'none'
+        menuList.classList.add('menu-animation')
+        
     }
 }
+
+
 menuElements.forEach((element) => {
     element.addEventListener('click', showMenu)
 })

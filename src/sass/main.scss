@@ -17,8 +17,15 @@ body{
 
 .wrapper{
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
     max-width: 1200px;
+}
+.section-title{
+    text-align: center;
+    font-size: 2rem;
+    background-image: $main-gradient-color;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 //NAWIGACJA
@@ -147,6 +154,28 @@ body{
     }
 
 }
+//SEKCJA ABOUT
+.about{
+    margin-top: 3em;
+    .about-box{
+        margin: 2em 1em 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .avatar{
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px $secondary-color;
+        }
+        .about-text{
+            margin-top: 1em;
+        }
+    }
+    
+
+}
 
 //ANIMACJE
 
@@ -177,7 +206,7 @@ body{
     from{
         height: 0;
     }to{
-        height: 30px;
+        height: 20px;
     }
     
 }
@@ -227,6 +256,26 @@ body{
             }
         }
     } 
+
+    //HERO GRAFIKA
+    .hero-img{
+        height: 400px;
+        .hero-header{
+            font-size: 3rem;
+        }
+        .hero-text{
+            font-size: 2rem;
+        }
+        .hero-btn{
+            transition: .4s ;
+            cursor: pointer;
+        }
+        .hero-btn:hover{
+            background-color: #269e2c;
+            
+        }
+    }
+
 }
 
 @media (min-width: 1200px){

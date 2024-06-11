@@ -202,14 +202,21 @@ body{
         transform: translateX(0);
     }
 }
-@keyframes resize {
+@keyframes resizeElementBefore {
     from{
         height: 0;
     }to{
-        height: 20px;
+        height: 25px;
     }
-    
 }
+@keyframes resizeElementAfter {
+    from{
+        width: 0;
+    }to{
+        width: 50px;
+    }
+}
+
 @keyframes hero-show {
     to{
         transform: translateX(0)
@@ -248,11 +255,25 @@ body{
                 background-color: $secondary-color;
                 content: '';
             }
+            .menu-element::after{
+                position: absolute;
+                width: 0px;
+                height: 3px;
+                bottom: -3px;
+                left: -10px;
+                background-color: $secondary-color;
+                content: '';
+            }
             .menu-element:hover{
                 transform: scale(1.1);
             }
             .menu-element:hover.menu-element::before{
-                animation: resize .5s forwards;
+                animation: resizeElementBefore .5s forwards;
+                box-shadow: 0 0 10px $secondary-color;
+            }
+            .menu-element:hover.menu-element::after{
+                animation: resizeElementAfter .5s .4s forwards;
+                box-shadow: 0 0 10px $secondary-color;
             }
         }
     } 

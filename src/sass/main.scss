@@ -82,7 +82,7 @@ body{
     }
     @media (max-width:992px){
         .mobile-menu{
-            display: flex;
+            display: none;
             position: absolute;
             top: 20px;
             width: 100%;
@@ -106,6 +106,7 @@ body{
     }
     .menu-animation{
         animation: slide-in .8s forwards;
+        display: flex;
     }
 }
 //HERO GRAFIKA
@@ -177,6 +178,46 @@ body{
 
 }
 
+.services{
+    margin-top: 4em;
+    .section-title{
+        margin-bottom: 2em;
+    }
+    .card-box{
+        display: flex;
+        flex-direction: column;
+        margin: 0 2em;
+        .card-item{
+            margin-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $secondary-color;
+            border-radius: 10px;
+            padding: 2em;
+            transform: translateX(200%);
+            transition: transform 0.8s ease; 
+            
+            i{
+                font-size: 2rem;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: $main-gradient-color;
+                margin-bottom: 1em;
+            }
+            .card-title{
+                margin-bottom: 1em;
+            }
+
+        }
+        .show-cards{
+            animation: slide-in .8s forwards;
+        }
+
+    }
+}
+
 //ANIMACJE
 
 @keyframes show-xmark {
@@ -195,9 +236,7 @@ body{
 }
 
 @keyframes slide-in {
-    from{
-        transform: translateX(200%);
-    }
+
     to{
         transform: translateX(0);
     }
@@ -224,6 +263,23 @@ body{
 }
 
 //MEDIA QUERIES
+
+@media (min-width: 768px){
+    .about{
+        .about-box{
+            display: flex;
+            flex-direction: row;
+            padding: 1em 2em;
+            .avatar{
+                order:1
+            }
+            .about-text{
+                font-size: 1.4rem;
+                margin-right: 3em;
+            }
+        }
+    }
+}
 @media (min-width: 992px) {
     .navbar{
         &-hamburger-btn{
@@ -280,7 +336,7 @@ body{
 
     //HERO GRAFIKA
     .hero-img{
-        height: 400px;
+        height: 500px;
         .hero-header{
             font-size: 3rem;
         }
@@ -294,6 +350,21 @@ body{
         .hero-btn:hover{
             background-color: #269e2c;
             
+        }
+    }
+    //SEKCJA ABOUT
+    .about{
+        .about-box{
+            padding: 2em 4em;
+            .avatar{
+                width: 400px;
+                height: 400px;
+                order: 1;
+            }
+            .about-text{
+                margin-right: 4em;
+                font-size: 1.7rem;
+            }
         }
     }
 
